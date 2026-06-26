@@ -1,0 +1,55 @@
+{
+  "system_name": "Fraud Detection System",
+  "peas": {
+    "performance_measures": [
+      "fraud_detection_accuracy",
+      "false_positive_rate",
+      "transaction_processing_speed",
+      "financial_loss_prevention",
+      "customer_satisfaction"
+    ],
+    "environment": "Online banking systems, mobile payment platforms, e-commerce websites, payment gateways, and financial institutions",
+    "actuators": [
+      "block_transaction",
+      "flag_for_review",
+      "send_alert",
+      "freeze_account",
+      "generate_report"
+    ],
+    "sensors": [
+      "transaction_records",
+      "account_activity_logs",
+      "device_information",
+      "ip_address",
+      "geolocation_data",
+      "behavior_patterns"
+    ]
+  },
+  "environment_classification": {
+    "observability": {
+      "choice": "Partially Observable",
+      "justification": "The system cannot observe all information related to fraud intentions."
+    },
+    "agents": {
+      "choice": "Multi-agent",
+      "justification": "Fraudsters and the detection system interact and influence each other."
+    },
+    "determinism": {
+      "choice": "Stochastic",
+      "justification": "Fraud events involve uncertainty and probabilistic behavior."
+    },
+    "episodic_sequential": {
+      "choice": "Sequential",
+      "justification": "Past transactions affect future fraud detection decisions."
+    },
+    "static_dynamic": {
+      "choice": "Dynamic",
+      "justification": "Fraud patterns and user behavior change continuously."
+    },
+    "discrete_continuous": {
+      "choice": "Continuous",
+      "justification": "Transaction attributes such as amount and time vary continuously."
+    }
+  },
+  "utility_function": "U = 0.7*DetectionAccuracy - 0.3*FalsePositiveRate"
+}
